@@ -7,7 +7,7 @@ interface Service {
 
 const baseServices: Service[] = [
   {
-    title: "Anxiety Treatment",
+    title: "Learning Disorders",
     description:
       "Evidence-based therapy to help manage and reduce anxiety symptoms.",
   },
@@ -22,7 +22,7 @@ const baseServices: Service[] = [
       "Comprehensive diagnostic assessments tailored to each client.",
   },
   {
-    title: "Behavioral Therapy",
+    title: "Behavioral Consultation",
     description:
       "Targeted interventions that promote measurable, lasting change.",
   },
@@ -32,10 +32,14 @@ const baseServices: Service[] = [
       "In-depth evaluations to clarify diagnosis and guide treatment planning.",
   },
   {
-    title: "Parent Coaching",
+    title: "Training and Workshops",
     description:
       "Collaborative coaching to support behavior strategies at home.",
   },
+  {
+    title: "School Consultations",
+    description: "Scheduled information sessions available for high school or university level schools"
+  }
 ];
 
 export default function ServicesSlider() {
@@ -48,7 +52,6 @@ export default function ServicesSlider() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const services = [...baseServices, ...baseServices, ...baseServices];
-  // const setLength = baseServices.length;
 
   // -----------------------------
   // START IN MIDDLE

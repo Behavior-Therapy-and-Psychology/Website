@@ -7,7 +7,7 @@ export default function Services() {
   <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
 
     <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-[#443A77] mb-20">
-      Our Services
+      Services
     </h2>
 
     {/* <div className="relative flex flex-col items-center text-center md:flex-row md:justify-between text-xl sm:text-2xl md:text-3xl font-semibold text-neutral-700 space-y-6 md:space-y-0">
