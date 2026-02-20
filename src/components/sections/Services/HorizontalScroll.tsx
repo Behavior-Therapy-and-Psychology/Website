@@ -9,36 +9,40 @@ const baseServices: Service[] = [
   {
     title: "Learning Disorders",
     description:
-      "Evidence-based therapy to help manage and reduce anxiety symptoms.",
+      `Learning Disorder Evaluations are offered in the areas of reading, writing and math.
+      Coordination with school personnel and written accommodations are included.`,
   },
   {
-    title: "ADHD Support",
+    title: "ADHD Evaluation",
     description:
-      "Structured behavioral strategies to improve focus and executive function.",
+      `ADHD evaluations are offered to individuals ages 4 to 16. 
+      
+      Evaluations include a full test battery with included analyses of other diagnoses if needed. Evaluations include test results and recommendations for any necessary goals, services and school accommodations.`,
   },
   {
-    title: "Autism Evaluations",
+    title: "Autism Evaluation",
     description:
-      "Comprehensive diagnostic assessments tailored to each client.",
+      `Autism evaluations are offered to individuals 1 year to adult in order to make new diagnoses or update current scores. Evaluations include test results and recommendations for any necessary goals, services and school accommodations.`,
   },
   {
     title: "Behavioral Consultation",
     description:
-      "Targeted interventions that promote measurable, lasting change.",
+      `Parent consultation to evaluate behavioral concerns in the home and to establish behavior modification goals and treatment.`,
   },
   {
     title: "Psychological Testing",
     description:
-      "In-depth evaluations to clarify diagnosis and guide treatment planning.",
+      `Psychological Testing is offered to individuals for a variety of diagnoses, including ASD, ADHD, Anxiety and Learning Disorders. 
+    
+      The process will begin with an intake session to gather history and a description of symptoms. If testing is warranted, it is
+      scheduled at the time of the intake. 
+      
+      A report of results is written and feedback is then given to the client and/or caregiver.`,
   },
   {
-    title: "Training and Workshops",
+    title: "School Consultation / Workshops",
     description:
-      "Collaborative coaching to support behavior strategies at home.",
-  },
-  {
-    title: "School Consultations",
-    description: "Scheduled information sessions available for high school or university level schools"
+      `Dr. Sweeten provides classroom consultation to teachers in order to address and support behavior concerns in the classroom. She also provides workshops to school district staff in the area of behavior management.`,
   }
 ];
 
@@ -145,7 +149,7 @@ useEffect(() => {
     <div ref={wrapperRef} className="relative overflow-hidden mt-24">
       <div
         ref={sliderRef}
-        className="flex items-start gap-8 px-4 overflow-x-auto cursor-grab active:cursor-grabbing select-none scrollbar-hide"
+        className="flex items-start gap-8 overflow-x-auto cursor-grab active:cursor-grabbing select-none scrollbar-hide"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={stopDragging}
@@ -159,32 +163,42 @@ useEffect(() => {
               key={index}
               className={`
                 flex-shrink-0
+                flex flex-col
+                justify-between
+                items-start
                 transition-all duration-500 ease-in-out
                 rounded-2xl shadow-xl overflow-hidden
                 ${
                   isActive
                     ? `
-                      w-[90vw] sm:w-[75vw] md:w-[500px]
-                      min-h-[400px]
+                      w-[80%] sm:w-[65%] md:w-[400px]
+                      min-h-[320px]
                       bg-white text-[#443A77]
                     `
                     : `
-                      w-[85vw] sm:w-[65vw] md:w-[320px]
-                      min-h-[260px]
+                      w-[55vw] sm:w-[40vw] md:w-[320px]
+                      min-h-[200px] sm:min-h-[220px]
                       bg-[#443A77] text-white
                     `
                 }
                 p-8
               `}
             >
-              <h3 className="text-2xl font-bold mb-4">
+              <h3 className="text-xl md:text-2xl font-bold">
                 {service.title}
               </h3>
 
-              <p className="text-base leading-relaxed mb-6">
+              <div
+              className={`
+                overflow-hidden transition-all
+                ${isActive ? "max-h-100 opacity-100 mt-4 duration-800 ease-out" : "max-h-0 opacity-0 duration-200 ease-in"}
+              `}
+            >
+              <p className="text-md md:text-base leading-relaxed whitespace-pre-line">
                 {service.description}
               </p>
-
+            </div>
+            <div className="pt-6">
               <button
                 className="text-sm underline"
                 onClick={(e) => {
@@ -194,6 +208,7 @@ useEffect(() => {
               >
                 {isActive ? "Close" : "Learn More"}
               </button>
+            </div>
             </div>
           );
         })}

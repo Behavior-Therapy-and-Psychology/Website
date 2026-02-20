@@ -32,7 +32,7 @@ export default function Landing() {
 
       <a
         href="#contact"
-        className="inline-flex items-center justify-center rounded-full bg-neutral-200 px-8 py-4 text-sm md:text-base font-semibold text-[#443A77] transition hover:bg-neutral-400"
+        className="inline-flex items-center justify-center rounded-full bg-neutral-200 px-8 py-4 text-sm md:text-base font-semibold text-[#443A77] transition hover:bg-neutral-300"
       >
         Contact Us
       </a>

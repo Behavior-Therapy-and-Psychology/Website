@@ -28,7 +28,7 @@ export default function About() {
 
         <a
           href="#contact"
-          className="inline-flex px-8 py-4 rounded-full bg-white text-[#443A77] font-semibold transition hover:bg-neutral-400"
+          className="inline-flex px-8 py-4 rounded-full bg-white text-[#443A77] font-semibold transition hover:bg-neutral-300"
         >
           Get in Touch
         </a>

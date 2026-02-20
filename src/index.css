@@ -15,38 +15,6 @@
   }
 }
 
-@keyframes smokeSequential {
-  0% {
-    opacity: 0;
-    filter: blur(14px);
-    transform: translateY(20px);
-  }
-
-  /* Fade in */
-  10% {
-    opacity: 1;
-    filter: blur(0px);
-    transform: translateY(0);
-  }
-
-  /* Stay visible longer */
-  55% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-
-  /* Fade out */
-  70% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
-  /* Stay hidden */
-  100% {
-    opacity: 0;
-  }
-}
-
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -56,28 +24,3 @@
 }
 
 
-.smoke-word {
-  opacity: 0;
-  animation: smokeSequential 20s ease-in-out infinite;
-}
-
-
-/* Desktop timing (20s total, 4s spacing) */
-.word-1 { animation-delay: 0s; }
-.word-2 { animation-delay: 4s; }
-.word-3 { animation-delay: 8s; }
-.word-4 { animation-delay: 12s; }
-.word-5 { animation-delay: 16s; }
-
-/* Mobile timing (slower + more spacing, 25s total) */
-@media (max-width: 767px) {
-  .smoke-word {
-    animation-duration: 25s;
-  }
-
-  .word-1 { animation-delay: 0s; }
-  .word-2 { animation-delay: 5s; }
-  .word-3 { animation-delay: 10s; }
-  .word-4 { animation-delay: 15s; }
-  .word-5 { animation-delay: 20s; }
-}

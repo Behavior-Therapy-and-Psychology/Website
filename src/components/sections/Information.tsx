@@ -7,24 +7,26 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Do you accept insurance?",
+    question: "What insurance is accepted?",
     answer:
-      "Yes, we accept several major insurance providers. Please contact us to verify coverage and benefits.",
+      `Aetna, Anthem, Blue Shield, Cigna, Magellan, Optum, Tricare and United Healthcare. 
+      
+      Insurance will be contacted before testing to make sure the service is covered and to determine if a pre-authorization is required. A copy of the insurance card and the client’s birthday are required to verify the service.`,
   },
   {
-    question: "What ages do you work with?",
+    question: "Can the testing be private pay?",
     answer:
-      "We work with children, adolescents, and adults depending on the type of service provided.",
+      `Yes, private pay is accepted. Cash, credit card, check, or Venmo are all accepted.`,
   },
   {
-    question: "How long are sessions?",
+    question: "How long does the testing process take?",
     answer:
-      "Standard therapy sessions are 50 minutes. Evaluation appointments may vary in length.",
+      `From the time of testing to feedback, it is approximately two weeks. That will depend on schedules and whether all test documents are received from parents and teachers`,
   },
   {
-    question: "Do you offer virtual appointments?",
+    question: "Are telehealth services offered?",
     answer:
-      "Yes, we offer secure telehealth appointments for clients located within the state.",
+      `In person appointments are preferred, however, if the client lives outside of the immediate area, a virtual intake can be done as well as a feedback session. However, all testing services must be done in the office.`,
   },
 ];
 
@@ -79,7 +81,7 @@ export default function FAQSection() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-6 text-gray-600 leading-relaxed">
+                    <p className="px-6 pb-6 text-gray-600 leading-relaxed whitespace-pre-line">
                       {item.answer}
                     </p>
                   </div>

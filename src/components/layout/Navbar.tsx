@@ -48,30 +48,33 @@ export default function Navbar() {
           </nav>
 
 {/* Mobile Menu Overlay */}
-<div
-  className={`md:hidden fixed inset-0 z-50 ${
+
+<nav className="md:hidden fixed top-0 left-0 right-0 z-500 bg-white">
+  <div className="flex items-center justify-between h-20 px-10">
+
+    {/* Logo */}
+    <img
+      src={Logo}
+      alt="Logo"
+      className="h-8 w-auto object-contain"
+    />
+
+    {/* Hamburger */}
+    <button
+      onClick={() => setOpen(!open)}
+      className="text-3xl text-[#443A77] z-50"
+    >
+      ☰
+    </button>
+
+  </div>
+</nav>
+  {/* Overlay */}
+  <div
+  className={`md:hidden fixed inset-0 z-400 ${
     open ? "pointer-events-auto" : "pointer-events-none"
   }`}
 >
-
-<img
-  src={Logo}
-  alt="Logo"
-  className={`fixed top-8 left-8 h-8 z-50 transition-opacity duration-300 ${
-    open ? "opacity-100" : "opacity-0 pointer-events-none"
-  }`}
-/>
-
-  {/* Hamburger (Top Right) */}
-  <button
-    onClick={() => setOpen(!open)}
-    className={`pointer-events-auto fixed top-8 right-8 text-3xl z-50 transition-colors duration-300
-      ${open ? "text-black" : "text-white"}`}
-  >
-    ☰
-  </button>
-
-  {/* Overlay */}
   <div
     className={`
       fixed inset-0 bg-white/95 backdrop-blur
