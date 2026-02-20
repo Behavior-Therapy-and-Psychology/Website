@@ -1,4 +1,4 @@
-import headshotImage from "../../../public/Kathie Sweeten Headshot.jpeg"
+import headshotImage from "/Kathie Sweeten Headshot.jpeg"
 // absolute inset-0 bg-[#443A77] -skew-y-4
 export default function About() {
     return (

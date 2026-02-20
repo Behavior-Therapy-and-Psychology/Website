@@ -1,4 +1,4 @@
-import landingImage from "../../../public/landing_image.png"
+import landingImage from "/landing_image.png"
 
 export default function Landing() {
     return (
