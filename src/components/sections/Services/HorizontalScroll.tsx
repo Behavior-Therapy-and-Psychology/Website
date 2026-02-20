@@ -72,33 +72,32 @@ requestAnimationFrame(() => {
   // -----------------------------
   // AUTO SCROLL RIGHT FOREVER
   // -----------------------------
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+useEffect(() => {
+  const slider = sliderRef.current;
+  if (!slider) return;
 
-    let frame: number;
-    const speed = 0.6; // increase slightly if needed
+  let frame: number;
+  const speed = 0.6;
 
-    const animate = () => {
-      if (!isDragging.current && activeIndex === null) {
-        slider.scrollLeft += speed;
+  const animate = () => {
+    if (!isDragging.current && activeIndex === null) {
+      slider.scrollBy({ left: speed });
 
-        const totalWidth = slider.scrollWidth;
-        const oneSetWidth = totalWidth / 3;
+      const totalWidth = slider.scrollWidth;
+      const oneSetWidth = totalWidth / 3;
 
-        // When reaching end of right buffer
-        if (slider.scrollLeft >= oneSetWidth * 2) {
-          slider.scrollLeft -= oneSetWidth;
-        }
+      if (slider.scrollLeft >= oneSetWidth * 2) {
+        slider.scrollLeft -= oneSetWidth;
       }
-
-      frame = requestAnimationFrame(animate);
-    };
+    }
 
     frame = requestAnimationFrame(animate);
+  };
 
-    return () => cancelAnimationFrame(frame);
-  }, [activeIndex]);
+  frame = requestAnimationFrame(animate);
+
+  return () => cancelAnimationFrame(frame);
+}, [activeIndex]);
 
   // -----------------------------
   // DRAG
@@ -149,7 +148,7 @@ useEffect(() => {
     <div ref={wrapperRef} className="relative overflow-hidden mt-24">
       <div
         ref={sliderRef}
-        className="flex items-start gap-8 overflow-x-auto cursor-grab active:cursor-grabbing select-none scrollbar-hide"
+        className="flex items-start gap-8 overflow-x-auto touch-pan-x cursor-grab active:cursor-grabbing select-none scrollbar-hide"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={stopDragging}
