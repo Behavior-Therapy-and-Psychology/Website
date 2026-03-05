@@ -145,10 +145,10 @@ useEffect(() => {
 
 
   return (
-    <div ref={wrapperRef} className="relative overflow-hidden mt-24">
+    <div ref={wrapperRef} className="relative mt-24">
       <div
         ref={sliderRef}
-        className="flex items-start gap-8 overflow-x-auto touch-pan-x cursor-grab active:cursor-grabbing select-none scrollbar-hide"
+        className="flex items-start gap-8 overflow-x-auto touch-pan-x touch-pan-y cursor-grab active:cursor-grabbing select-none scrollbar-hide"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={stopDragging}
@@ -190,7 +190,7 @@ useEffect(() => {
               <div
               className={`
                 overflow-hidden transition-all
-                ${isActive ? "max-h-100 opacity-100 mt-4 duration-800 ease-out" : "max-h-0 opacity-0 duration-200 ease-in"}
+                ${isActive ? "max-h-screen opacity-100 mt-4 duration-800 ease-out" : "max-h-0 opacity-0 duration-200 ease-in"}
               `}
             >
               <p className="text-md md:text-base leading-relaxed whitespace-pre-line">
