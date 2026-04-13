@@ -21,12 +21,17 @@ const faqData: FAQItem[] = [
   {
     question: "How long does the testing process take?",
     answer:
-      `From the time of testing to feedback, it is approximately two weeks. That will depend on schedules and whether all test documents are received from parents and teachers`,
+      `From the time of testing to feedback, it is approximately two weeks. That will depend on schedules and whether all test documents are received from parents and teachers.`,
   },
   {
     question: "Are telehealth services offered?",
     answer:
       `In person appointments are preferred, however, if the client lives outside of the immediate area, a virtual intake can be done as well as a feedback session. However, all testing services must be done in the office.`,
+  }, 
+  {
+    question: "Are you a vendor for a regional center?",
+    answer:
+      `Yes, Dr. Sweeten is a vendor for the San Diego Regional Center.`,
   },
 ];
 
